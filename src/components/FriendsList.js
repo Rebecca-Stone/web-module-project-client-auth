@@ -1,4 +1,6 @@
-import React from 'react';
+//STEP 2: Move everything from the App to the respective folders in components file.
+//2A: import React
+import React from "react";
 
 const FriendsList = () => {
   return (
@@ -14,4 +16,5 @@ const FriendsList = () => {
   );
 };
 
+//2B: export the function
 export default FriendsList;

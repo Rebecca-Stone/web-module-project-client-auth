@@ -1,3 +1,5 @@
+//STEP 2: Move everything from the App to the respective folders in components file.
+//2A: import React
 import React from "react";
 
 const AddFriends = () => {
@@ -23,4 +25,5 @@ const AddFriends = () => {
   );
 };
 
+//2B: export the function
 export default AddFriends;
