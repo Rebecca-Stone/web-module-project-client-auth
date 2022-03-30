@@ -23,7 +23,7 @@ const FriendsList = () => {
           setFriends(res.data);
         })
         .catch((err) => {
-          debugger;
+            console.log(err)
         });
     },
     //   we are passing an empty array here, so that it only works on mount

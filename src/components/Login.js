@@ -49,7 +49,7 @@ const Login = () => {
         //we will now be redirected back to the /friends endpoint
       })
       .catch((err) => {
-        debugger;
+          console.log(err)
       });
   };
 

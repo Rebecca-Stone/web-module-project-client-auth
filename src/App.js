@@ -11,6 +11,8 @@ import {
 import Login from "./components/Login";
 import FriendsList from "./components/FriendsList";
 import AddFriends from "./components/AddFriends";
+import Logout from "./components/Logout";
+import PrivateRoute from "./components/PrivateRoute";
 
 // STEP 1: Create each piece of the application
 
@@ -84,13 +86,13 @@ function App() {
           <Link className="link" to="/login">
             Login
           </Link>
-          <Link className="link" to="friends">
+          <Link className="link" to="/friends">
             Friends
           </Link>
-          <Link className="link" to="friends/add">
+          <Link className="link" to="/friends/add">
             Add Friends
           </Link>
-          <Link className="link" to="logout">
+          <Link className="link" to="/logout">
             Logout
           </Link>
         </header>
@@ -103,14 +105,24 @@ function App() {
           {/* this will redirect to the login form */}
           <Redirect to="/" />
         </Route>
-        <Route exact path="/friends">
-          {/* this will redirect to the FriendsList*/}
+
+        {/* <Route exact path="/friends">
+          {/* this will redirect to the FriendsList
           <FriendsList />
-        </Route>
-        <Route exact path="/friends/add">
-          {/* this will redirect to the AddFriends form */}
+        </Route> */}
+
+        <PrivateRoute exact path="/friends" component={FriendsList} />
+
+        {/* <Route exact path="/friends/add"> this will redirect to the AddFriends form
           <AddFriends />
-        </Route>
+        </Route> */}
+        <PrivateRoute exact path="/friends/add" component={AddFriends} />
+
+        {/* <Route exact path="/logout">
+          <Logout />
+        </Route> */}
+
+        <PrivateRoute exact path="/logout" component={Logout} />
       </div>
     </Router>
   );
