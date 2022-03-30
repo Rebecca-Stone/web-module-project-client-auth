@@ -6,7 +6,7 @@ const Logout = () => {
   const { push } = useHistory();
   useEffect(() => {
     const token = localStorage.getItem("token");
-    
+
     axios
       .post(
         "http://localhost:9000/api/logout",
